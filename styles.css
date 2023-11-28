@@ -23,7 +23,7 @@ main {
 }
 
 #taskList {
-    border-bottom: 1px solid #ccc;
+    border-bottom: 1px solid rgb(29, 68, 194);
     margin-bottom: 1em;
     padding-bottom: 1em;
 }
@@ -39,7 +39,7 @@ main {
 }
 
 .task:hover {
-    background-color: #f5f5f5;
+    background-color: #5377da;
 }
 
 .due-date, .due-time {
@@ -107,16 +107,16 @@ body.dark-mode {
 }
 
 #darkModeToggle:hover {
-    background-color: #34495e;
+    background-color: #2475c7;
     color: #fff;
 }
 
 /* Adjust text color for better visibility in dark mode */
 label, input, button, #pomodoroDuration, #countdown, .due-date, .due-time {
-    color: #000003;
+    color: #01010a;
 }
 
-/* Adjust text color on hover for better visibility */
+/* Adjust text color on hover for better visibility in dark mode */
 label:hover, input:hover, button:hover, #pomodoroDuration:hover {
     color:#185ead;
 }
