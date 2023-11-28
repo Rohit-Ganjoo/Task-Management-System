@@ -15,11 +15,44 @@
     </header>
 
     <main>
-        <section id="taskList">
+        <!-- Add buttons for sign up and sign in -->
+        <section id="authButtons">
+            <button onclick="showSignUpForm()">Sign Up</button>
+            <button onclick="showSignInForm()">Sign In</button>
+        </section>
+
+        <!-- Add a sign-up form -->
+        <section id="signUpSection" style="display: none;">
+            <form id="signUpForm">
+                <label for="newUsername">New Username:</label>
+                <input type="text" id="newUsername" required>
+
+                <label for="newPassword">New Password:</label>
+                <input type="password" id="newPassword" required>
+
+                <button type="button" onclick="createAccount()">Create Account</button>
+            </form>
+        </section>
+
+        <!-- Add a login form -->
+        <section id="loginSection" style="display: none;">
+            <form id="loginForm">
+                <label for="username">Username:</label>
+                <input type="text" id="username" required>
+
+                <label for="password">Password:</label>
+                <input type="password" id="password" required>
+
+                <button type="button" onclick="authenticateUser()">Login</button>
+            </form>
+        </section>
+
+        <!-- Task sections will be displayed only if the user is authenticated -->
+        <section id="taskList" style="display: none;">
             <!-- Task list will be displayed here -->
         </section>
 
-        <section id="taskForm">
+        <section id="taskForm" style="display: none;">
             <!-- Form to add new tasks -->
             <form id="addTaskForm">
                 <label for="taskTitle">Task Title:</label>
@@ -36,7 +69,7 @@
         </section>
 
         <!-- Add a Pomodoro button and input for session duration -->
-        <section id="pomodoroSection">
+        <section id="pomodoroSection" style="display: none;">
             <button id="startPomodoro">Start/Reset Pomodoro</button>
             <button id="pauseResumePomodoro">Pause/Resume Pomodoro</button>
             <button id="sortTasks">Sort Tasks</button>
@@ -46,10 +79,11 @@
             <span id="countdown"></span>
         </section>
 
-        
     </main>
 
     <script src="app.js"></script>
+    <!-- Add a separate script for authentication -->
+    <script src="auth.js"></script>
         
 </body>
 
