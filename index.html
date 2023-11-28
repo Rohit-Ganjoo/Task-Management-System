@@ -15,25 +15,11 @@
     </header>
 
     <main>
-        <!-- Add a login form -->
-        <section id="loginSection">
-            <form id="loginForm">
-                <label for="username">Username:</label>
-                <input type="text" id="username" required>
-
-                <label for="password">Password:</label>
-                <input type="password" id="password" required>
-
-                <button type="button" onclick="authenticateUser()">Login</button>
-            </form>
-        </section>
-
-        <!-- Task sections will be displayed only if the user is authenticated -->
-        <section id="taskList" style="display: none;">
+        <section id="taskList">
             <!-- Task list will be displayed here -->
         </section>
 
-        <section id="taskForm" style="display: none;">
+        <section id="taskForm">
             <!-- Form to add new tasks -->
             <form id="addTaskForm">
                 <label for="taskTitle">Task Title:</label>
@@ -50,7 +36,7 @@
         </section>
 
         <!-- Add a Pomodoro button and input for session duration -->
-        <section id="pomodoroSection" style="display: none;">
+        <section id="pomodoroSection">
             <button id="startPomodoro">Start/Reset Pomodoro</button>
             <button id="pauseResumePomodoro">Pause/Resume Pomodoro</button>
             <button id="sortTasks">Sort Tasks</button>
@@ -60,11 +46,10 @@
             <span id="countdown"></span>
         </section>
 
+        
     </main>
 
     <script src="app.js"></script>
-    <!-- Add a separate script for authentication -->
-    <script src="auth.js"></script>
         
 </body>
 
