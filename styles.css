@@ -111,6 +111,23 @@ body.dark-mode {
     color: #fff;
 }
 
+/* Style for the Sort Tasks button */
+#sortTasks {
+    background-color: #ecf0f1;
+    color: #0e0303;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background-color 0.3s, color 0.3s;
+    margin-bottom: 1em;
+}
+
+#sortTasks:hover {
+    color: #2980b9;
+}
+
+
 /* Adjust text color for better visibility in dark mode */
 label, input, button, #pomodoroDuration, #countdown, .due-date, .due-time {
     color: #01010a;

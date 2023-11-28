@@ -59,6 +59,34 @@ document.addEventListener('DOMContentLoaded', function () {
         darkModeToggle.textContent = buttonText;
 });
 
+// Add JavaScript logic for sorting tasks
+const sortTasksButton = document.getElementById('sortTasks');
+sortTasksButton.addEventListener('click', sortTasks);
+
+function sortTasks() {
+    // Get all task elements
+    const taskElements = document.querySelectorAll('.task');
+
+    // Convert NodeList to an array for easier manipulation
+    const tasksArray = Array.from(taskElements);
+
+    // Sort tasks based on due date and time
+    tasksArray.sort((a, b) => {
+        const aDueDateTime = new Date(a.querySelector('.due-date').textContent + ' ' + a.querySelector('.due-time').textContent);
+        const bDueDateTime = new Date(b.querySelector('.due-date').textContent + ' ' + b.querySelector('.due-time').textContent);
+        return aDueDateTime - bDueDateTime;
+    });
+
+    // Clear the task list
+    taskList.innerHTML = '';
+
+    // Append the sorted tasks to the task list
+    tasksArray.forEach(task => {
+        taskList.appendChild(task);
+    });
+}
+
+
 
     // Event listener for the Pomodoro button
     startPomodoroButton.addEventListener('click', startPomodoro);
