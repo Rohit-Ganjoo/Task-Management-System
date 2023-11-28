@@ -229,4 +229,89 @@ function sortTasks() {
             console.error('Countdown display element not found.');
         }
     }
+
+    // Function to edit a task
+    window.editTask = function (button) {
+        const taskElement = button.closest('.task');
+
+        // Extract current task details
+        const currentTitle = taskElement.querySelector('span').textContent;
+        const currentDueDate = taskElement.querySelector('.due-date').textContent;
+        const currentDueTime = taskElement.querySelector('.due-time').textContent;
+
+        // Create a form for editing
+        const editForm = document.createElement('form');
+        editForm.innerHTML = `
+            <label for="editTaskTitle">Task Title:</label>
+            <input type="text" id="editTaskTitle" value="${currentTitle}" required>
+
+            <label for="editTaskDate">Due Date:</label>
+            <input type="date" id="editTaskDate" value="${currentDueDate}" required>
+
+            <label for="editTaskTime">Due Time:</label>
+            <input type="time" id="editTaskTime" value="${currentDueTime}" required>
+
+            <button type="button" onclick="saveEditedTask()">Save</button>
+            <button type="button" onclick="cancelEditTask()">Cancel</button>
+        `;
+
+        // Replace the task element with the edit form
+        taskElement.replaceWith(editForm);
+    };
+
+    // Function to save the edited task
+    window.saveEditedTask = function () {
+        const editForm = document.querySelector('form');
+        const editedTitle = document.getElementById('editTaskTitle').value;
+        const editedDate = document.getElementById('editTaskDate').value;
+        const editedTime = document.getElementById('editTaskTime').value;
+
+        // Validate and update the edited task details
+        if (editedTitle.trim() !== '') {
+            const taskElement = document.createElement('div');
+            taskElement.classList.add('task');
+
+            const editedDueDateTime = new Date(`${editedDate}T${editedTime}`);
+
+            taskElement.innerHTML = `
+                <span>${editedTitle}</span>
+                <span class="due-date">${editedDueDateTime.toLocaleDateString()}</span>
+                <span class="due-time">${editedDueDateTime.toLocaleTimeString()}</span>
+                <button onclick="editTask(this)">Edit</button>
+                <button onclick="deleteTask(this)">Delete</button>
+            `;
+
+            editForm.replaceWith(taskElement);
+        } else {
+            // Handle validation error
+            alert('Task title cannot be empty. Please enter a title.');
+        }
+    };
+
+    // Function to cancel the task edit
+    window.cancelEditTask = function () {
+        const editForm = document.querySelector('form');
+        const taskElement = document.createElement('div');
+        taskElement.classList.add('task');
+
+        // Restore the original task details
+        const currentTitle = editForm.querySelector('#editTaskTitle').value;
+        const currentDueDate = editForm.querySelector('#editTaskDate').value;
+        const currentDueTime = editForm.querySelector('#editTaskTime').value;
+        const currentDueDateTime = new Date(`${currentDueDate}T${currentDueTime}`);
+
+        taskElement.innerHTML = `
+            <span>${currentTitle}</span>
+            <span class="due-date">${currentDueDateTime.toLocaleDateString()}</span>
+            <span class="due-time">${currentDueDateTime.toLocaleTimeString()}</span>
+            <button onclick="editTask(this)">Edit</button>
+            <button onclick="deleteTask(this)">Delete</button>
+        `;
+
+        editForm.replaceWith(taskElement);
+    };
+
+
+
 });
+
