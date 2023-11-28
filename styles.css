@@ -31,7 +31,7 @@ main {
 .task {
     display: flex;
     justify-content: space-between;
-    border: 1px solid #ddd;
+    border: 1px solid #5ebce0;
     padding: 1em;
     margin-bottom: 1em;
     border-radius: 4px;

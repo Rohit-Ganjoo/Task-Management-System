@@ -48,12 +48,17 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 
     // Add JavaScript logic for toggling dark mode
-    const darkModeToggle = document.getElementById('darkModeToggle');
-    const body = document.body;
+        const darkModeToggle = document.getElementById('darkModeToggle');
+        const body = document.body;
 
-    darkModeToggle.addEventListener('click', () => {
+        darkModeToggle.addEventListener('click', () => {
         body.classList.toggle('dark-mode');
-    });
+    
+    // Update the button text based on dark mode state
+        const buttonText = body.classList.contains('dark-mode') ? 'Exit Batman Mode' : 'Enter Batman Mode';
+        darkModeToggle.textContent = buttonText;
+});
+
 
     // Event listener for the Pomodoro button
     startPomodoroButton.addEventListener('click', startPomodoro);
