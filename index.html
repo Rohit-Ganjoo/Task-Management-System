@@ -74,16 +74,28 @@
             <button id="pauseResumePomodoro">Pause/Resume Pomodoro</button>
             <button id="sortTasks">Sort Tasks</button>
             <label for="pomodoroDuration">Pomodoro Duration (minutes): </label>
-            <input type="number" id="pomodoroDuration" min="1" value="25">
+            <input type="number" id="pomodoroDuration" min="1" value="20">
             <!-- Countdown display for Pomodoro timer -->
             <span id="countdown"></span>
         </section>
+        <!-- Layout for notepad  -->
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Draggable Notepad</title>
+        <div id="notepad" style="width: 200px; height: 400px;">
+
+                <div id="notepadheader" style= "font-weight: 1000">NotePad</div>
+                <div contenteditable="true">-</div>
+              </div>
 
     </main>
 
+    <!-- script of the main logic  -->
     <script src="app.js"></script>
     <!-- Add a separate script for authentication -->
     <script src="auth.js"></script>
+    <!-- Add a separate script for Notepad which is draggable -->
+    <script src="notepad.js"></script>
         
 </body>
 

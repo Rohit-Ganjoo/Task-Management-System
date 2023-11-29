@@ -32,6 +32,7 @@ main {
     display: flex;
     justify-content: space-between;
     border: 1px solid #5ebce0;
+    color:#030505;
     padding: 1em;
     margin-bottom: 1em;
     border-radius: 4px;
@@ -126,7 +127,62 @@ body.dark-mode {
 #sortTasks:hover {
     color: #2980b9;
 }
+#mydiv {
+    position: absolute;
+    z-index: 9;
+    background-color: #f1f1f1;
+    text-align: center;
+    border: 1px solid #d3d3d3;
+  }
 
+  #mydivheader {
+    padding: 10px;
+    cursor: move;
+    z-index: 10;
+    background-color: #c8dbeb;
+    color: #050202;
+  }
+
+  #notepad {
+    position: absolute;
+    float: center;
+    z-index: 9;
+    background-color: #dde6f1;
+    color:#080404;
+    text-align: center;
+    border: 1px solid #cadfe4;
+}
+
+#notepadheader {
+    padding: 10px;
+    cursor: move;
+    z-index: 100;
+    background-color: #2196F3;
+    color: #0a0202;
+}
+  
+  #notepadcontent {
+    padding: 10px;
+    color: #0b738d;
+    height: calc(100% - 40px);
+    overflow-y: auto;
+  }
+  
+  #mydiv {
+    position: absolute;
+    z-index: 9;
+    background-color: #f1f1f1;
+    text-align: center;
+    border: 1px solid #d3d3d3;
+  }
+  
+  #mydivheader {
+    padding: 10px;
+    cursor: move;
+    z-index: 10;
+    background-color: #2196F3;
+    color: #fff;
+  }
 
 /* Adjust text color for better visibility in dark mode */
 label, input, button, #pomodoroDuration, #countdown, .due-date, .due-time {
